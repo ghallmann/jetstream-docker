@@ -34,6 +34,4 @@
 
 `php artisan key:generate`
 
-+ APP_KEY= key gerada aqui
-
 ## Pronto, o app vai estar rodando no localhost:8080
