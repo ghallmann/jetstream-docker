@@ -30,6 +30,10 @@
 
 `npm install`
 
+`npm run build`
+
+`php artisan migrate`
+
 + Gerar laravel app key
 
 `php artisan key:generate`
