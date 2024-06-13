@@ -4,12 +4,8 @@
 
 + cd jetstream+docker
 + Criar .env
-+ Gerar laravel app key
-
-`php artisan key:generate`
 
 + Alterar .env
-    + APP_KEY= key gerada aqui
     + DB_CONNECTION=mysql
     + DB_HOST=db
     + DB_PORT=3306
@@ -33,5 +29,11 @@
 + No terminal do docker rodar
 
 `npm install`
+
++ Gerar laravel app key
+
+`php artisan key:generate`
+
++ APP_KEY= key gerada aqui
 
 ## Pronto, o app vai estar rodando no localhost:8080
