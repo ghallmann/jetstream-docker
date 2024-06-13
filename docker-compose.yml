@@ -1,0 +1,83 @@
+version: "3.7"
+
+services:
+    # image project
+    app:
+        container_name: app
+        build:
+            context: .
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        depends_on:
+            - db
+            - redis
+        networks:
+            - laravel
+
+    # nginx
+    nginx:
+        container_name: nginx
+        image: nginx:alpine
+        restart: unless-stopped
+        ports:
+            - "8080:80"
+        volumes:
+            - ./:/var/www
+            - ./docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            - laravel
+
+    # db mysql
+    db:
+        container_name: mysql8
+        image: mysql:8.0
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_ROOT_HOST: "%"
+        volumes:
+            - db_data:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        networks:
+            - laravel
+
+    # redis
+    redis:
+        container_name: redis
+        image: redis:latest
+        networks:
+            - laravel
+
+    # node for Vue.js
+    node:
+        container_name: node
+        image: node:16
+        working_dir: /var/www
+        volumes:
+            - ./:/var/www
+        command: npm install && npm run dev
+        networks:
+            - laravel
+    
+    # mailhog
+    mailhog:
+        image: 'mailhog/mailhog:latest'
+        ports:
+            - "1025:1025"
+            - "8025:8025"
+        networks:
+            - laravel
+
+volumes:
+  db_data:
+  
+networks:
+    laravel:
+        driver: bridge
