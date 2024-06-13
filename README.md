@@ -3,9 +3,8 @@
 ## Depois de clonar:
 
 + cd jetstream-docker
-+ Criar .env
-
-+ Alterar .env
++ Criar .env 
++ Alterar variáveis abaixo no .env
     + DB_CONNECTION=mysql
     + DB_HOST=db
     + DB_PORT=3306
