@@ -9,20 +9,20 @@
 `php artisan key:generate`
 
 - Alterar .env
-## APP_KEY= key gerada aqui
-## DB_CONNECTION=mysql
-## DB_HOST=db
-## DB_PORT=3306
-## DB_DATABASE=laravel
-## DB_USERNAME=root
-## DB_PASSWORD=root
-## REDIS_CLIENT=phpredis
-## REDIS_HOST=127.0.0.1
-## REDIS_PASSWORD=null
-## REDIS_PORT=6379
-## MAIL_MAILER=smtp
-## MAIL_HOST=mailhog
-## MAIL_PORT=1025
+* APP_KEY= key gerada aqui
+* DB_CONNECTION=mysql
+* DB_HOST=db
+* DB_PORT=3306
+* DB_DATABASE=laravel
+* DB_USERNAME=root
+* DB_PASSWORD=root
+* REDIS_CLIENT=phpredis
+* REDIS_HOST=127.0.0.1
+* REDIS_PASSWORD=null
+* REDIS_PORT=6379
+* MAIL_MAILER=smtp
+* MAIL_HOST=mailhog
+* MAIL_PORT=1025
 
 - Rodar comandos make
 
@@ -30,7 +30,7 @@
 
 `make terminal`
 
-- No terminal do docker rodar:
+- No terminal do docker rodar
 
 `npm install`
 
