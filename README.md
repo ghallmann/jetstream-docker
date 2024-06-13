@@ -2,7 +2,7 @@
 
 ## Depois de clonar:
 
-+ cd jetstream+docker
++ cd jetstream-docker
 + Criar .env
 
 + Alterar .env
