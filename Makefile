@@ -14,4 +14,5 @@ composer-update:
 	docker exec app bash -c "composer update"
 data:
 	docker exec app bash -c "php artisan migrate"
-	docker exec app bash -c "php artisan db:seed"
+tinker:
+    docker exec -it app bash -c "php artisan tinker"
